@@ -14,8 +14,3 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'spring',        group: :development
 
-group :development do
-  gem 'guard', '~> 2.6.1'
-  gem 'guard-livereload', '~> 2.3.0'
-  gem 'guard-rails', '~> 0.5.3'
-end
