@@ -1,0 +1,17 @@
+%p#notice= notice
+
+%p 
+  %b Original Text:
+  = @card.original_text
+
+%p 
+  %b Translanted Text:
+  = @card.translated_text
+
+%p
+  %b Review Date:
+  = @card.review_date
+
+= link_to 'Edit', edit_card_path(@card)
+\|
+= link_to 'Back', cards_path

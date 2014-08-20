@@ -1,7 +1,21 @@
-list of flash cards
+%h1 list of flash cards
 %table
+  %tr
+    %th Original Text
+    %th Translated Text
+    %th Review date
+    %th
+    %th
+    %th
   - @cards.each do |card|
     %tr
       %td= card.original_text
       %td= card.translated_text
       %td= card.review_date
+      %td= link_to "Show", card
+      %td= link_to "Edit", edit_card_path(card)
+      %td= link_to "Destroy", card, method: :delete,  data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Card', new_card_path
