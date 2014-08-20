@@ -18,31 +18,25 @@ class CardsController < ApplicationController
   def create
     @card = Card.new(card_params)
 
-    respond_to do |format|
-      if @card.save
-        format.html { redirect_to @card, notice: 'Card was successfully created.' }
-      else
-        format.html { render :new }
-      end
+    if @card.save
+      redirect_to @card, notice: 'Card was successfully created.'
+    else
+      render :new
     end
   end
 
 
   def update
-    respond_to do |format|
-      if @card.update(card_params)
-        format.html { redirect_to @card, notice: 'Card was successfully updated.' }
-      else
-        format.html { render :edit }
-      end
+    if @card.update(card_params)
+      redirect_to @card, notice: 'Card was successfully updated.'
+    else
+      render :edit
     end
   end
 
   def destroy
     @card.destroy
-    respond_to do |format|
-      format.html { redirect_to cards_path, notice: 'Card was successfully destroyed.' }
-    end
+    redirect_to cards_path, notice: 'Card was successfully destroyed.'
   end
 
   private
