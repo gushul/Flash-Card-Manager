@@ -1,7 +1,7 @@
 class Card < ActiveRecord::Base
   validates :original_text, :translated_text, presence: true
 
-  scope :review_before, -> { where("review_date <= ?", Date.today) }
+  scope :pending, -> { where("review_date <= ?", Date.today) }
 
   def check_translation(translate)
     translate == translated_text
