@@ -8,4 +8,6 @@
   %body
     %section#container
       = render 'layouts/header'
+      - if flash[:alert]
+        %p#notice= flash[:alert]
       %section= yield

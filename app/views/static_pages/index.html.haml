@@ -1,13 +1,12 @@
 %p{:style => "font-size: 22px;"}
   Первый в мире удобный менеджер флеш-карточек. Именно так.
-%table
-  %tr
-    %th Original Text
-    %th Translated Text
-    %th Review date
-  - @cards.each do |card|
-    %tr
-      %td= card.original_text
-      %td= card.translated_text
-      %td= card.review_date
-
+  
+%p
+  - if @card.nil?
+    %span.error Новые,,
+  - else
+    = @card.original_text
+    = form_tag("/cards/#{@card.id}/review", url: 'review_card_path') do
+      = label_tag(:label, "Введите перевод:")
+      = text_field_tag(:translate)
+      = submit_tag("Проверить")

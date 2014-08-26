@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
-  before_action :set_card, only: [:show, :edit, :update, :destroy]
+  before_action :set_card, only: [:show, :edit, :update, :destroy, :review]
 
   def index
     @cards = Card.all
@@ -39,6 +39,15 @@ class CardsController < ApplicationController
     redirect_to cards_path, notice: 'Card was successfully destroyed.'
   end
 
+  def review
+    if @card.checking_translation(params[:translate])
+      @card.update(:review_date => Date.today + 3)
+      flash[:alert] = "Awesome! Try next card!"
+    else
+      flash[:alert] = "Wrong translate"
+    end
+    redirect_to root_path
+  end
   private
   def set_card
     @card = Card.find(params[:id])

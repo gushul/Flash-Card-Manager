@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
   def index
-    @cards = Card.new_review
+    @card = Card.where("review_date < ?", Date.today).take
   end
 end
