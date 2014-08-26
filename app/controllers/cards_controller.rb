@@ -40,14 +40,15 @@ class CardsController < ApplicationController
   end
 
   def review
-    if @card.checking_translation(params[:translate])
-      @card.update(:review_date => Date.today + 3)
+    if @card.check_translation(params[:translate])
+      @card.update(review_date: :Date.today + 3)
       flash[:notice] = "Awesome! Try next card!"
     else
       flash[:alert] = "Wrong translate"
     end
     redirect_to root_path
   end
+
   private
   def set_card
     @card = Card.find(params[:id])
