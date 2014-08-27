@@ -18,7 +18,7 @@ describe Card do
   context "#update_review_date" do
     it "changes review date by 3 day" do
       @card.update_review_date
-      expect(@card.review_date.to_date).to eq(Date.today + 3.day) 
+      expect(@card.review_date.to_date).to eq(Time.now.to_date + 3.day) 
     end
   end
 end
