@@ -20,10 +20,5 @@ describe Card do
       @card.update_review_date
       expect(@card.review_date.to_date).to eq(Date.today + 3.day) 
     end
-  
-    it "changes review date & and raview date not today" do
-        @card.update_review_date
-      expect(@card.review_date.to_date).to_not eq(Date.today) 
-    end
   end
 end
