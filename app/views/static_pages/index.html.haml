@@ -1,7 +1,7 @@
 %p{:style => "font-size: 22px;"}
   Первый в мире удобный менеджер флеш-карточек. Именно так.
 %p
-  - if @card.nil?
+  - unless @card
     %h2.error#alert Новых Карточек нет
   - else
     = @card.original_text
