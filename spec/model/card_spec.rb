@@ -6,11 +6,11 @@ describe Card do
   end
   
   context "#check_translation" do
-    it "with valid data" do
+    it "valid translation" do
       expect(@card.check_translation("Hi")).to eq true
     end
   
-    it "with invalid data" do
+    it "invalid translation" do
       expect(@card.check_translation("Hii")).to eq false
     end
   end
