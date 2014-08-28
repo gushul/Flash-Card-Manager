@@ -41,7 +41,7 @@ class CardsController < ApplicationController
 
   def review
     if @card.check_translation(params[:translate])
-      @card.update_review
+      @card.update_review_date
       flash[:notice] = "Awesome! Try next card!"
     else
       flash[:alert] = "Wrong translate"

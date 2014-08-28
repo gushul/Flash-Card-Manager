@@ -25,6 +25,10 @@ module FlashCardManager
       g.assets = false
       g.helper = false
       g.test = false
+      g.controller_specs = false
+      g.view_specs = false
+      g.helper_specs = false
+      g.routing_specs  = false
     end
   end
 end

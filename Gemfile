@@ -14,4 +14,4 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'simple_form', '~> 3.0.2'
 
 gem 'spring',        group: :development
-
+gem 'rspec-rails',   '~> 3.0.0'
