@@ -8,7 +8,7 @@ class Card < ActiveRecord::Base
   end
 
   def update_review_date
-    update_attribute(:review_date, (Time.now + 3.day))
+    update_attribute(:review_date, (Date.today + 3.day))
   end
 
 end
