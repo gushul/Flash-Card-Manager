@@ -22,13 +22,18 @@ module FlashCardManager
     config.assets.paths << "#{Rails}/vendor/assets/fonts"
 
     config.generators do |g|
+      g.stylesheets  false
+      g.javascripts false
       g.assets = false
       g.helper = false
-      g.test = false
-      g.controller_specs = false
-      g.view_specs = false
-      g.helper_specs = false
-      g.routing_specs  = false
+      g.test_framework :rspec,
+        fixtures: :false,
+        view_specs: :false,
+        routing_specs: :false,
+        controller_specs: :false,
+        helper_specs: :false,
+        routing_specs: :false
+      g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
   end
 end

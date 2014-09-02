@@ -14,4 +14,14 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'simple_form', '~> 3.0.2'
 
 gem 'spring',        group: :development
-gem 'rspec-rails',   '~> 3.0.0'
+group :development, :test do
+  gem 'rspec-rails',   '~> 3.0.0'
+  gem 'factory_girl_rails'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'poltergeist', '~> 1.5.1'
+  gem 'phantomjs', require: 'phantomjs/poltergeist'
+end

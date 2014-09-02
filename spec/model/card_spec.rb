@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Card do
   before do
-    @card = Card.create!(original_text: "Hello", translated_text: "Hi", review_date: Time.now )
+    @card = Card.create!(original_text: "Hello", translated_text: "Hi", review_date: Date.today )
   end
   
   context "#check_translation" do
