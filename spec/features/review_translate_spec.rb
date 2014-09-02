@@ -6,8 +6,8 @@ describe "Review_translate" do
     visit root_path
   end
 
-  context "dosen't input anything" do
-    it "" do
+  context "doesn't input text" do
+    it "empty input fieald" do
       fill_in "translate", with: ""
       click_button "Проверить"
       expect(page).to have_content "Wrong translate"
