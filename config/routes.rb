@@ -6,5 +6,9 @@ Rails.application.routes.draw do
     end
   end
   resources :users
-  match '/signup', to: 'users#new', via: 'get'
+  resources :sessions, only: [:new, :create, :destroy]
+  match '/signup',  to: 'users#new',         via: 'get'
+  match '/signin',  to: 'sessions#new',      via: 'get'
+  match '/signout', to: 'sessions#destroy',  via: 'delete'
+  match 'sessions/new', to: 'sessions#new',  via: 'post'
 end
