@@ -5,4 +5,6 @@ Rails.application.routes.draw do
       put 'review'
     end
   end
+  resources :users
+  match '/signup', to: 'users#new', via: 'get'
 end

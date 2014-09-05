@@ -1,9 +1,7 @@
 require 'rails_helper'
 
 describe Card do
-  before do
-    @card = Card.create!(original_text: "Hello", translated_text: "Hi", review_date: Date.today )
-  end
+  before { @card = build(:card) }
   
   context "#check_translation" do
     it "valid translation" do

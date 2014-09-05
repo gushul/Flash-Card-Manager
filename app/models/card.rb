@@ -1,6 +1,7 @@
 class Card < ActiveRecord::Base
   validates :original_text, :translated_text, presence: true
 
+  belongs_to :user,  dependent: :delete
   scope :pending, -> { where("review_date <= ?", Date.today) }
 
   def check_translation(translate)
