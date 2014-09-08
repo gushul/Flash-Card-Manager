@@ -1,5 +1,6 @@
 class CardsController < ApplicationController
   before_action :set_card, only: [:show, :edit, :update, :destroy, :review]
+  before_action :signed_in_user
 
   def index
     @cards = Card.all
@@ -16,8 +17,7 @@ class CardsController < ApplicationController
   end
   
   def create
-    @card = Card.new(card_params)
-
+    @card = current_user.cards.build(card_params)
     if @card.save
       redirect_to @card, notice: 'Card was successfully created.'
     else

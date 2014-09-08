@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @cards = @user.cards
   end
 
   def new
@@ -18,7 +19,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      sing_in @user
+      sign_in(@user)
       redirect_to root_url, notice: 'Welcome'
     else
       render :new

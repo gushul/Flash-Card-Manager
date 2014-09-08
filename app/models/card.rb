@@ -1,5 +1,6 @@
 class Card < ActiveRecord::Base
   validates :original_text, :translated_text, presence: true
+  validates :user_id, presence: true
 
   belongs_to :user,  dependent: :delete
   scope :pending, -> { where("review_date <= ?", Date.today) }
