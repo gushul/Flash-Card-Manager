@@ -13,8 +13,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'simple_form', '~> 3.0.2'
 gem 'bcrypt-ruby', '~> 3.1.5', require: 'bcrypt'
-gem 'omniauth-twitter'
-gem 'figaro'
 
 gem 'spring',        group: :development
 group :development, :test do
