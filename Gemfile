@@ -12,11 +12,13 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'simple_form', '~> 3.0.2'
+gem 'bcrypt-ruby', '~> 3.1.5', require: 'bcrypt'
 
 gem 'spring',        group: :development
 group :development, :test do
   gem 'rspec-rails',   '~> 3.0.0'
   gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 group :test do

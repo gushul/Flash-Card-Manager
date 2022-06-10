@@ -1,0 +1,4 @@
+- if @cards
+  %h3
+    Количество ваших карточек  #{@user.cards.count}
+  %ol= render @cards

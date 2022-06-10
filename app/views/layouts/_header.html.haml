@@ -1,5 +1,10 @@
 %header#top.navbar.navbar-static-top.bs-docs-nav.clearfix
   %h1= link_to "Флэшкарточкер", root_path
   %ul.navigation-links
-    %li= link_to "Все карточки", cards_path
-    %li= link_to "Добавить карточки", new_card_path
+    - if signed_in?
+      %li= link_to "Все карточки", cards_path
+      %li= link_to "Добавить карточки", new_card_path
+      %li= link_to "Выйти", signout_path, method: "delete"
+    - else
+      %li= link_to "Войти", signin_path
+      %li= link_to "Регистрация", signup_path

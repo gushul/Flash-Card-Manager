@@ -3,7 +3,11 @@ require 'rails_helper'
 describe "Review_translate" do
   before do
     @card = FactoryGirl.create(:card)
-    visit root_path
+    @user = FactoryGirl.create(:user)
+    visit signin_path
+    fill_in "Password", with: @user.password
+    fill_in "Email", with: @user.email
+    click_button "Sign in"
   end
 
   context "doesn't input text" do
